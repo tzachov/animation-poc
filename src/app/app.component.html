@@ -1,0 +1,15 @@
+<div class="search-bar" (click)="onReset()">
+    Click to Search...
+</div>
+
+<div class="results" [class.visible]="items">
+    <div *ngFor="let item of items" class="results-item">
+        <div class="title">{{ item.title }}</div>
+        <div class="bullets" *ngIf="item.bullets && item.bullets.length > 0">
+            <div class="bullet" *ngFor="let bullet of item.bullets">{{ bullet.name }}</div>
+        </div>
+        <div class="tags" *ngIf="item.tags && item.tags.length > 0">
+            <div class="tag" *ngFor="let tag of item.tags">{{ tag.name }}</div>
+        </div>
+    </div>
+</div>
